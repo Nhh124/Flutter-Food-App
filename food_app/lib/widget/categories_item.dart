@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 
@@ -11,7 +12,6 @@ class CategoryItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.all(15),
-      child: Text(title),
       decoration: BoxDecoration(
         gradient: LinearGradient(
           colors: [color.withOpacity(0.7), color],
@@ -19,6 +19,9 @@ class CategoryItem extends StatelessWidget {
           end: Alignment.bottomRight,
         ),
         borderRadius: BorderRadius.circular(15),
+      ),
+      child: Text(
+        title,
       ),
     );
   }
