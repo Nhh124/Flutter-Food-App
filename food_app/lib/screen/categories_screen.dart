@@ -3,9 +3,9 @@ import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/widgets.dart';
 import 'package:food_app/data/dummy_data.dart';
-import 'package:food_app/model/category.dart';
+import 'package:food_app/models/category.dart';
 import './categories_screen.dart';
-import 'package:food_app/widget/categories_item.dart';
+import 'package:food_app/screen/categories_item.dart';
 
 class CategoryScreen extends StatelessWidget {
   const CategoryScreen({super.key});
@@ -24,7 +24,11 @@ class CategoryScreen extends StatelessWidget {
             crossAxisSpacing: size.height * .02,
             mainAxisSpacing: size.height * .02),
         children: DUMMY_CATEGORIES
-            .map((data) => CategoryItem(title: data.title, color: data.color))
+            .map((data) => CategoryItem(
+                  id: data.id,
+                  title: data.title,
+                  color: data.color,
+                ))
             .toList(),
       ),
     );
