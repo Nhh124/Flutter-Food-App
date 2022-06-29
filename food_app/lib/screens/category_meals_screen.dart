@@ -6,6 +6,7 @@ class CategoriesMealScreen extends StatelessWidget {
   const CategoriesMealScreen({
     super.key,
   });
+  static const routeName = '/category-meals';
 
   // final String categoryId;
   // final String categoryTitle;
@@ -26,6 +27,7 @@ class CategoriesMealScreen extends StatelessWidget {
       body: ListView.builder(
         itemBuilder: (context, index) {
           return MealItem(
+            id: categoryMeal[index].id,
             title: categoryMeal[index].title.toString(),
             ImgUrl: categoryMeal[index].imageUrl.toString(),
             affordability: categoryMeal[index].affordability,
