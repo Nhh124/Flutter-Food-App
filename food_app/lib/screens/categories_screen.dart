@@ -13,16 +13,14 @@ class CategoryScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
-    return Scaffold(
-      appBar: AppBar(
-        title: Text("DeliMeals"),
-      ),
-      body: GridView(
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 20),
+      child: GridView(
         gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
             maxCrossAxisExtent: size.height * 0.4,
             childAspectRatio: 3 / 2,
-            crossAxisSpacing: size.height * .02,
-            mainAxisSpacing: size.height * .02),
+            crossAxisSpacing: size.height * .03,
+            mainAxisSpacing: size.height * .03),
         children: DUMMY_CATEGORIES
             .map((data) => CategoryItem(
                   id: data.id,
