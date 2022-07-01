@@ -13,11 +13,13 @@ class CategoryScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
-    return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 20),
+    return Container(
+      width: size.width,
+      height: size.height,
       child: GridView(
+        padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 20),
         gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
-            maxCrossAxisExtent: size.height * 0.4,
+            maxCrossAxisExtent: size.width * 0.4,
             childAspectRatio: 3 / 2,
             crossAxisSpacing: size.height * .03,
             mainAxisSpacing: size.height * .03),

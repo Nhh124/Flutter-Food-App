@@ -21,7 +21,7 @@ class MainDrawer extends StatelessWidget {
         ),
         title: Text(
           title,
-          style: TextStyle(
+          style: const TextStyle(
             fontFamily: 'RobotoCondensed',
             fontSize: 24,
             fontWeight: FontWeight.bold,
@@ -51,11 +51,11 @@ class MainDrawer extends StatelessWidget {
           height: 20,
         ),
         buildListTile('Meals', Icons.restaurant, () {
-          Navigator.push(
-              context, MaterialPageRoute(builder: ((context) => TabsScreen())));
+          Navigator.pushReplacement(context,
+              MaterialPageRoute(builder: ((context) => const TabsScreen())));
         }),
         buildListTile('Filter', Icons.settings, () {
-          Navigator.pushNamed(
+          Navigator.pushReplacementNamed(
             context,
             FiltersScreen.routeName,
           );
