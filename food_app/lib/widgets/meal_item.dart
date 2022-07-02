@@ -1,21 +1,19 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:food_app/models/meal.dart';
 import 'package:food_app/screens/meal_detail_screen.dart';
 
 class MealItem extends StatelessWidget {
-  const MealItem(
-      {super.key,
-      required this.ImgUrl,
-      required this.title,
-      required this.duration,
-      required this.complexity,
-      required this.affordability,
-      required this.id,
-      required this.removeItem});
+  const MealItem({
+    super.key,
+    required this.ImgUrl,
+    required this.title,
+    required this.duration,
+    required this.complexity,
+    required this.affordability,
+    required this.id,
+  });
 
   final String id;
   final String ImgUrl;
@@ -23,7 +21,7 @@ class MealItem extends StatelessWidget {
   final int duration;
   final Complexity complexity;
   final Affordability affordability;
-  final Function removeItem;
+
   String get ComplexityText {
     switch (complexity) {
       case Complexity.Simple:
@@ -65,7 +63,7 @@ class MealItem extends StatelessWidget {
         .pushNamed(MealDetailScreen.routeName, arguments: id)
         .then((value) {
       if (value != null) {
-        removeItem(value);
+        // removeItem(value);
       }
     });
   }

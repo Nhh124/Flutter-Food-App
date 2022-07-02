@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:food_app/screens/tabs_screen.dart';
+import '../screens/tabs_screen.dart';
 import '../screens/filters_screen.dart';
 
 class MainDrawer extends StatelessWidget {
@@ -51,8 +49,12 @@ class MainDrawer extends StatelessWidget {
           height: 20,
         ),
         buildListTile('Meals', Icons.restaurant, () {
-          Navigator.pushReplacement(context,
-              MaterialPageRoute(builder: ((context) => const TabsScreen())));
+          Navigator.pushReplacement(
+              context,
+              MaterialPageRoute(
+                  builder: ((context) => TabsScreen(
+                        favoriteMeal: [],
+                      ))));
         }),
         buildListTile('Filter', Icons.settings, () {
           Navigator.pushReplacementNamed(
